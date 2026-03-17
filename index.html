@@ -1,244 +1,509 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Naapura Pilates</title>
-
-<style>
-
-body{
-    margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f6f6fb;
-    color:#333;
-}
-
-header{
-    background:#ffffff;
-    text-align:center;
-    padding:30px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-
-header img{
-    width:180px;
-}
-
-nav{
-    margin-top:15px;
-}
-
-nav a{
-    margin:0 15px;
-    text-decoration:none;
-    color:#6f5aa7;
-    font-weight:bold;
-}
-
-.hero{
-    text-align:center;
-    padding:60px 20px;
-}
-
-.hero img{
-    width:120px;
-}
-
-.hero h1{
-    font-size:40px;
-    color:#6f5aa7;
-}
-
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-}
-
-.section{
-    padding:60px 0;
-}
-
-.section h2{
-    text-align:center;
-    color:#6f5aa7;
-    margin-bottom:30px;
-}
-
-.cards{
-    display:flex;
-    gap:30px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.card{
-    background:white;
-    border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
-    padding:20px;
-    width:300px;
-}
-
-.card img{
-    width:100%;
-    border-radius:10px;
-}
-
-.beneficios{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-}
-
-.beneficio{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    text-align:center;
-    box-shadow:0 3px 10px rgba(0,0,0,0.08);
-}
-
-.contacto{
-    text-align:center;
-    background:#6f5aa7;
-    color:white;
-    padding:40px 20px;
-}
-
-footer{
-    text-align:center;
-    padding:20px;
-    background:#eee;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Naapura Pilates · Estudio en Chacarita</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #faf9ff;
+            color: #2d2a3a;
+            line-height: 1.5;
+        }
+        :root {
+            --violeta: #6f5aa7;
+            --violeta-claro: #e1d9f2;
+            --violeta-bg: #f3effa;
+            --amarillo-sutil: #f9eec1;
+            --amarillo-suave: #fef7e0;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--violeta);
+            letter-spacing: -0.02em;
+        }
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.8rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: var(--violeta);
+            border-radius: 2px;
+        }
+        .container h2 {
+            display: block;
+            text-align: center;
+        }
+        .container h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 3.5rem 0;
+        }
+        header {
+            background: linear-gradient(90deg, #ffffff 0%, var(--violeta-bg) 100%);
+            box-shadow: 0 5px 20px rgba(111, 90, 167, 0.15);
+            padding: 1rem 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid var(--violeta);
+        }
+        .logo-area img {
+            height: 70px;
+            width: auto;
+            transition: transform 0.2s;
+        }
+        .logo-area img:hover {
+            transform: scale(1.03);
+        }
+        nav a {
+            margin-left: 1.2rem;
+            text-decoration: none;
+            color: var(--violeta);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        nav a:hover {
+            border-bottom-color: var(--violeta);
+        }
+        .hero {
+            background: linear-gradient(145deg, #ffffff 0%, var(--violeta-bg) 100%);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 2px solid var(--violeta-claro);
+        }
+        .hero img {
+            max-width: 180px;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 6px 10px rgba(111,90,167,0.2));
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            background: linear-gradient(145deg, #6f5aa7, #9579d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 3px 3px 10px rgba(111,90,167,0.2);
+            margin: 0.3rem 0 0.8rem;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #3d3559;
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.7);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            backdrop-filter: blur(4px);
+        }
+        .cards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+        }
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.5rem 1.2rem 1.8rem;
+            box-shadow: 0 12px 25px -10px rgba(111,90,167,0.15);
+            flex: 1 1 260px;
+            max-width: 300px;
+            transition: 0.2s;
+            border: 1px solid rgba(255,255,255,0.6);
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--violeta-claro);
+        }
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 18px;
+            background: var(--violeta-claro);
+            margin-bottom: 1rem;
+            border: 3px solid white;
+        }
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            color: #4a4766;
+            font-size: 0.95rem;
+            white-space: pre-line;
+        }
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.2rem;
+        }
+        .beneficio-item {
+            background: white;
+            padding: 1.5rem 0.8rem;
+            border-radius: 30px 15px 30px 15px;
+            text-align: center;
+            font-weight: 500;
+            color: var(--violeta);
+            box-shadow: 0 4px 12px var(--violeta-claro);
+            border-left: 4px solid var(--amarillo-sutil);
+            font-size: 1rem;
+        }
+        .estudio-contenido {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            background: white;
+            border-radius: 40px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(111,90,167,0.06);
+        }
+        .estudio-texto {
+            flex: 2 1 280px;
+        }
+        .estudio-texto p {
+            font-size: 1rem;
+            margin: 1.2rem 0;
+            background: var(--violeta-bg);
+            padding: 1rem 1.5rem;
+            border-radius: 40px 12px 40px 12px;
+            border-left: 5px solid var(--violeta);
+        }
+        .estudio-imagen {
+            flex: 0 0 150px;  /* Tamaño fijo más pequeño */
+            min-height: auto;
+            background: transparent; /* Quitamos fondo para que se vea solo la imagen */
+            border: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .estudio-imagen img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 8px 18px rgba(111,90,167,0.15);
+            filter: brightness(1.02) contrast(1.02); /* Pequeña mejora de claridad */
+            border: 2px solid white;
+        }
+        .contacto-wrapper {
+            background: var(--violeta);
+            color: white;
+            border-radius: 50px 50px 30px 30px;
+            padding: 2.5rem 1.2rem;
+            margin-top: 2rem;
+        }
+        .contacto-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contacto-card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(5px);
+            padding: 2rem 1.5rem;
+            border-radius: 40px;
+            flex: 1 1 240px;
+            border: 1px solid var(--amarillo-sutil);
+            text-align: center;
+        }
+        /* Hacemos más ancha la tercera tarjeta para que la imagen se vea más grande */
+        .contacto-card:last-child {
+            flex: 1 1 320px;
+            max-width: 360px;
+        }
+        .contacto-card h3 {
+            color: var(--amarillo-sutil);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .contacto-card p {
+            font-size: 1.1rem;
+            margin: 0.6rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .destacado-telefono {
+            background: var(--amarillo-suave);
+            color: var(--violeta);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: inline-block;
+            margin: 0.3rem 0;
+            border: 2px solid white;
+            width: 100%;
+            max-width: 280px;
+            text-decoration: none;
+        }
+        .horario-box {
+            background: white;
+            color: var(--violeta);
+            border-radius: 30px;
+            padding: 1.5rem;
+            font-weight: 600;
+            text-align: left;
+        }
+        .horario-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.5rem 0;
+            padding: 0.3rem 0;
+            border-bottom: 1px dashed var(--violeta-claro);
+        }
+        .horario-item:last-child {
+            border-bottom: none;
+        }
+        .horario-dia {
+            font-weight: 700;
+            color: var(--violeta);
+        }
+        .horario-hora {
+            background: var(--amarillo-sutil);
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            color: var(--violeta);
+            font-weight: 600;
+        }
+        .whatsapp {
+            margin-top: 1.2rem;
+            background: #1ab905cb;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            display: inline-block;
+            font-weight: 600;
+            border: 2px solid white;
+        }
+        footer {
+            background: #e4daf2;
+            color: #3b355a;
+            text-align: center;
+            padding: 2rem;
+            border-top: 3px solid var(--violeta);
+            font-size: 0.95rem;
+        }
+        .footer-emoji {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 0.8rem;
+                padding: 1rem;
+            }
+            nav a {
+                margin: 0 0.7rem;
+                font-size: 0.9rem;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .hero img {
+                max-width: 150px;
+            }
+            .hero p {
+                font-size: 1rem;
+                padding: 0.7rem 1rem;
+            }
+            h2 {
+                font-size: 1.9rem;
+            }
+            .card {
+                max-width: 100%;
+            }
+            .horario-item {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+            .estudio-imagen {
+                flex: 0 0 120px; /* más pequeño en móvil */
+            }
+            .contacto-card:last-child {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-
-<img src="imagen1.png">
-
-<nav>
-<a href="#sobre">Sobre Nosotros</a>
-<a href="#profes">Profesores</a>
-<a href="#beneficios">Beneficios</a>
-<a href="#clases">Clases</a>
-<a href="#contacto">Contacto</a>
-</nav>
-
+    <div class="logo-area">
+        <img src="imagen1.png" alt="Naapura Pilates logo">
+    </div>
+    <nav>
+        <a href="#sobre">Sobre Nosotros</a>
+        <a href="#profes">Profesoras</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#clases">Clases</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 </header>
 
 <section class="hero">
-
-<img src="dibu1_Mesa de trabajo 1.png">
-
-<h1>Naapura Pilates</h1>
-
-<p>En Naapura buscamos encontrar un equilibrio total entre cuerpo y mente.</p>
-
+    <img src="dibu1_Mesa de trabajo 1.png" alt="Naapura ilustración">
+    <h1>Naapura Pilates</h1>
+    <p>Equilibrio entre cuerpo y mente · Chacarita</p>
 </section>
 
 <section class="section container" id="sobre">
-
-<h2>Sobre el Estudio</h2>
-
-<p style="text-align:center">
-Estudio de pilates ubicado en Chacarita / Colegiales.  
-Trabajamos con grupos reducidos para garantizar clases cuidadas y personalizadas.
-</p>
-
+    <h2>Sobre el estudio</h2>
+    <div class="estudio-contenido">
+        <div class="estudio-texto">
+            <p><strong>Sede CHACARITA</strong> — En Naapura vemos al Pilates como un método de ejercicio que ayuda a aumentar la fuerza muscular, mejorar la postura y flexibilidad.</p>
+            <p>En Naapura buscamos encontrar un equilibrio total entre cuerpo y mente.</p>
+        </div>
+        <div class="estudio-imagen">
+         
+            <img src="fondo4.png" alt="Espacio Naapura">
+        </div>
+    </div>
 </section>
 
 <section class="section container" id="profes">
-
-<h2>Nuestros Profesores</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="Nay 2.jpg">
-<h3>Nayla</h3>
-
-</div>
-
-<div class="card">
-<img src="Luna.jpg">
-<h3>Luna</h3>
-</div>
-
-<div class="card">
-<img src="leny 1.jpg">
-<h3>Leny</h3>
-</div>
-
-</div>
-
+    <h2>Nuestras profesoras</h2>
+    <div class="cards-grid">
+        <div class="card">
+            <img src="Luna.jpg" alt="Luna">
+            <h3>Luna</h3>
+            <p>Bailarina, coreógrafa y directora. También Instructora de Pilates y docente de Danza Contemporánea.</p>
+        </div>
+        <div class="card">
+            <img src="Nay 2.jpg" alt="Nayla">
+            <h3>Nayla</h3>
+            <p>Profesora de Ed. Física, Yoga (especialización en embarazadas, postparto, niños y tercera edad), Instructora de Pilates Reformer, Mat y especialización en Torre, y Masaje Tailandés.</p>
+        </div>
+        <div class="card">
+            <img src="leny 1.jpg" alt="Leny">
+            <h3>Leny</h3>
+            <p>Creadora de Estudio Naapura, bailarina, coreógrafa, profe de yoga, instructora de pilates reformer, pilates torre y cadilac. Especialización en Biomecánica Deportiva, y en Recuperación y Prevención de Lesiones, y masaje Tailandés. ✨</p>
+        </div>
+    </div>
 </section>
 
 <section class="section container" id="beneficios">
-
-<h2>Beneficios de hacer Pilates</h2>
-
-<div class="beneficios">
-
-<div class="beneficio">Reduce el estrés</div>
-<div class="beneficio">Ayuda a dormir mejor</div>
-<div class="beneficio">Aumenta la flexibilidad</div>
-<div class="beneficio">Mejora y corrige la postura</div>
-<div class="beneficio">Ayuda a relajarse</div>
-<div class="beneficio">Aumenta la fuerza y equilibrio</div>
-
-</div>
-
+    <h2>Beneficios del pilates</h2>
+    <div class="beneficios-grid">
+        <div class="beneficio-item">🧘 Reduce el estrés</div>
+        <div class="beneficio-item">😴 Ayuda a dormir mejor</div>
+        <div class="beneficio-item">🙌 Aumenta la flexibilidad</div>
+        <div class="beneficio-item">📐 Mejora y corrige la postura</div>
+        <div class="beneficio-item">✨ Ayuda a relajarse</div>
+        <div class="beneficio-item">⚖️ Aumenta fuerza y equilibrio</div>
+    </div>
 </section>
 
 <section class="section container" id="clases">
-
-<h2>Nuestras Clases</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Pilates Reformer</h3>
-<p>Entrenamiento con máquinas reformer para mejorar fuerza, postura y flexibilidad.</p>
-</div>
-
-<div class="card">
-<h3>Pilates Mat</h3>
-<p>Trabajo de control corporal utilizando el peso del propio cuerpo.</p>
-</div>
-
-<div class="card">
-<h3>Chairs y Corrector Espinal</h3>
-<p>Equipamiento especializado para mejorar alineación y movilidad.</p>
-</div>
-
-<div class="card">
-<h3>Clases de grupos reducidos</h3>
-<p>Clases cuidadas y personalizadas para cada alumno.</p>
-</div>
-
-</div>
-
+    <h2>Nuestras clases</h2>
+    <div class="cards-grid">
+        <div class="card">
+            <h3>Pilates Reformer</h3>
+            <p>Entrenamiento con máquinas reformer para mejorar fuerza, postura y flexibilidad.</p>
+        </div>
+        <div class="card">
+            <h3>Pilates Mat</h3>
+            <p>Trabajo de control corporal utilizando el peso del propio cuerpo.</p>
+        </div>
+        <div class="card">
+            <h3>Chairs y Corrector Espinal</h3>
+            <p>Equipamiento especializado para mejorar alineación y movilidad.</p>
+        </div>
+        <div class="card">
+            <h3>Grupos reducidos</h3>
+            <p>Clases cuidadas y personalizadas para cada alumno.</p>
+        </div>
+    </div>
 </section>
 
-<section class="contacto" id="contacto">
-
-<h2>Contacto</h2>
-
-<p>📞 +54 9 11 5809-5798</p>
-<p>📍 Estudio en Chacarita / Colegiales</p>
-
+<section class="section" id="contacto">
+    <div class="container contacto-wrapper">
+        <h2 style="color: white; text-align: center;">Contacto y horarios</h2>
+        <div class="contacto-grid">
+            <div class="contacto-card">
+                <h3>📞 Llamanos</h3>
+                <p class="destacado-telefono">+54 9 11 3201-0821</p>
+                <p class="destacado-telefono">+54 9 11 5809-5798</p>
+                <p>📍 Fraga 599 esq. Olleros, Chacarita</p>
+            </div>
+            <div class="contacto-card">
+                <h3>🕒 Horarios</h3>
+                <div class="horario-box">
+                    <div class="horario-item">
+                        <span class="horario-dia">Lunes a Viernes</span> 
+                        <span class="horario-hora">9h a 20h</span>
+                    </div>
+                    <div class="horario-item">
+                        <span class="horario-dia">Sábados</span>
+                        <span class="horario-hora">9h a 12h</span>
+                    </div>
+                </div>
+                <p style="margin-top: 1.2rem;">
+                    <span class="whatsapp">💬 Consultanos por WhatsApp</span>
+                </p>
+            </div>
+            <div class="contacto-card">
+                <div style="background: var(--amarillo-suave); border-radius: 30px; padding: 1.2rem; color: var(--violeta);">
+                 
+                    <img src="RAISA_3 (1).JPG" alt="Estudio Naapura" style="width:100%; border-radius: 20px; margin-bottom: 0.5rem; box-shadow: 0 6px 14px rgba(0,0,0,0.1);">
+                    <p style="font-weight: 600;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
-
-Naapura Pilates © 2026
-
+    <div class="footer-emoji">💜</div>
+    <p>Naapura Pilates · Fraga 599 esquina Olleros, Chacarita</p>
+    <p style="margin-top: 0.3rem;">♡ Cuerpo Equilibrio</p>
 </footer>
 
 </body>
