@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Naapura Pilates · Estudio en Chacarita</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,7 +26,6 @@
             --amarillo-sutil: #f9eec1;
             --amarillo-suave: #fef7e0;
         }
-        
         h1, h2, h3 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
@@ -93,7 +91,6 @@
         .logo-area img:hover {
             transform: scale(1.03);
         }
-        
         nav a {
             margin-left: 1.2rem;
             text-decoration: none;
@@ -115,7 +112,7 @@
             border-bottom: 2px solid var(--violeta-claro);
         }
         .hero img {
-            max-width: 240px;
+            max-width: 220px;
             margin-bottom: 1rem;
             filter: drop-shadow(0 6px 10px rgba(111,90,167,0.2));
         }
@@ -216,24 +213,23 @@
             border-radius: 40px 12px 40px 12px;
             border-left: 5px solid var(--violeta);
         }
-        
+        /* ===== IMAGEN DEL ESTUDIO CON TAMAÑO CONTROLADO ===== */
         .estudio-imagen {
-            flex: 0 0 160px;  
-            min-height: auto;
-            background: transparent;
-            border: none;
-            padding: 0;
+            flex: 0 0 auto;          /* Eliminamos el flex-basis para controlar con width */
             display: flex;
             align-items: center;
             justify-content: center;
+            /* Bordes temporales para ver el contenedor (los puedes quitar) */
+            /* border: 2px solid red; */
         }
         .estudio-imagen img {
-            width: 100%;
+            width: 160px;              /* Tamaño fijo en escritorio */
             height: auto;
             border-radius: 20px;
             box-shadow: 0 8px 18px rgba(111,90,167,0.15);
             filter: brightness(1.02) contrast(1.02);
             border: 2px solid white;
+            transition: width 0.2s;
         }
         .contacto-wrapper {
             background: var(--violeta);
@@ -418,15 +414,9 @@
                 flex-direction: column;
                 gap: 0.2rem;
             }
-     
-            .estudio-imagen {
-                flex: 0 0 100px;  /* Aún más grande en móvil */
-                width: 100%;
-                margin: 0 auto;
-            }
-            .estudio-contenido {
-                flex-direction: column;
-                text-align: center;
+            /* ===== IMAGEN DEL ESTUDIO MÓVIL ===== */
+            .estudio-imagen img {
+                width: 130px;   /* Aquí controlas el tamaño en móvil */
             }
             .contacto-card {
                 padding: 1.5rem 1rem;
@@ -452,7 +442,7 @@
         <img src="imagen1.png" alt="Naapura Pilates logo">
     </div>
     <nav>
-        <a href="#sobre">Sobre Nosotras</a>
+        <a href="#sobre">Sobre Nosotros</a>
         <a href="#profes">Profesoras</a>
         <a href="#beneficios">Beneficios</a>
         <a href="#clases">Clases</a>
